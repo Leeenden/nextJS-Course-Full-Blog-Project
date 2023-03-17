@@ -2,6 +2,8 @@ import ReactMarkdown from "react-markdown"
 import classes from "./post-content.module.css"
 import PostHeader from "./post-header"
 import Image from "next/image"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
 function PostContent(props) {
   const { post } = props
@@ -22,13 +24,13 @@ function PostContent(props) {
     p(paragraph) {
       const { node } = paragraph
 
-      if (node.children[0].type === "img") {
+      if (node.children[0].tagName === "image") {
         const image = node.children[0]
 
         return (
           <div className={classes.image}>
             <Image
-              src={`/images/posts/${post.slug}/${image.properties.src}`}
+              src={`/images/posts/${post.slug}/${image.url}`}
               alt={image.alt}
               width={600}
               height={300}
