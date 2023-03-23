@@ -4,20 +4,14 @@ module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
       env: {
-        mongodb_username: "LindenH-NetH",
-        mongodb_password: "owtKnr19B6hMUYCs",
-        mongodb_clustername: "lindennhlearning",
-        mongodb_database: "my-site-dev",
+        db_url: `${process.env.REACT_APP_MONGO_DEV_URL}`,
       },
     }
   }
 
   return {
     env: {
-      mongodb_username: "LindenH-NetH",
-      mongodb_password: "owtKnr19B6hMUYCs",
-      mongodb_clustername: "lindennhlearning",
-      mongodb_database: "my-site",
+      db_url: `${process.env.REACT_APP_MONGO_PROD_URL}`,
     },
   }
 }
