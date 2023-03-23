@@ -1,5 +1,5 @@
 import { MongoClient } from "mongodb"
-const { REACT_APP_DB_URL } = process.env
+// const { REACT_APP_DB_URL } = process.env
 
 async function handler(req, res) {
   if (req.method === "POST") {
@@ -25,8 +25,10 @@ async function handler(req, res) {
 
     let client
 
+    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.lvlepoh.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
+
     try {
-      client = await MongoClient.connect(REACT_APP_DB_URL)
+      client = await MongoClient.connect(connectionString)
     } catch (error) {
       res.status(500).json({ message: "Could not connect to DB" })
       return
