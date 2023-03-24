@@ -35,3 +35,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 # nextJS-Course-Full-Blog-Project
 # Udemy-Course-NextJS-blog-site
 # Udemy-Course-NextJS-blog-site
+# UdemyCourse-nextjs-blog-site
