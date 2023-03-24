@@ -1,4 +1,3 @@
-// import
 import { Fragment } from "react"
 import Head from "next/head"
 import Hero from "../components/home-page/hero"
